@@ -6,6 +6,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -21,8 +23,12 @@ public class Clientes {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    private EntityManager entityManager;
+
+    @Transactional //para dizer esse método vai gerar uma transação no db
     public Cliente salvar(Cliente cliente){
-        jdbcTemplate.update( INSERT, new Object[]{cliente.getNome()} );
+        entityManager.persist( cliente );
         return cliente;
     }
 
