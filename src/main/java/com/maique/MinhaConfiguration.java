@@ -7,8 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-@Configuration
-@Profile("development")
+@Development
 public class MinhaConfiguration {
 
     //@Bean(name = "applicationName") //criar objeto string para podermos usar. convem usar nomes diferentes para beans de mesmo tipo de objeto.
