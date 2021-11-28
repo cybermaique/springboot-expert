@@ -18,11 +18,6 @@ public class ClientesService {
     public void salvarCliente(Cliente cliente){
         validarCliente(cliente);
         this.repository.persistir(cliente);
-//        clienteservice depende do clienterepository, pq se n tiver, como vai persistir? o
-//        clienterepository é uma dependencia do cliente service.
-//        nao e interessante, pois vai pesar a base de dados. para resolver isso, delegamos a instancia ao container
-//        de gerenciamento de instancia do spring.
-        //ClientesRepository clientesRepository = new ClientesRepository();
 
     }
 
