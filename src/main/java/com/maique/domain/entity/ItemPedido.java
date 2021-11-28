@@ -1,6 +1,7 @@
 package com.maique.domain.entity;
 
 public class ItemPedido {
+
     private Integer id;
     private Pedido pedido;
     private Produto produto;
